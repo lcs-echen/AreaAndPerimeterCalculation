@@ -38,7 +38,7 @@ struct RectangleView: View {
             Text("Length")
                 .font(.title2)
                 .fontWeight(.bold)
-            Slider(value: Binding.constant(length),
+            Slider(value: $length,
                    in: 0...100,
                    label: { Text("Length") },
                    minimumValueLabel: { Text("0") },
@@ -49,23 +49,19 @@ struct RectangleView: View {
             Text("Width")
                 .font(.title2)
                 .fontWeight(.bold)
-            Slider(value: Binding.constant(length),
-            Slider(value: $length
+            
+            Slider(value: $width,
                    in: 0...100,
                    label: { Text("Length") },
                    minimumValueLabel: { Text("0") },
-                   maximumValueLabel: { Text("100") } ) )
+                   maximumValueLabel: { Text("100") } )
             // Use string interpolation \() to display length
             Text("\(width)")
             
             Text("Area")
                 .font(.title2)
                 .fontWeight(.bold)
-            Slider(value: Binding.constant(length),
-                   in: 0...100,
-                   label: { Text("Length") },
-                   minimumValueLabel: { Text("0") },
-                   maximumValueLabel: { Text("100") } )
+           
             // Use string interpolation \() to display length
             Text("\(area)")
             
