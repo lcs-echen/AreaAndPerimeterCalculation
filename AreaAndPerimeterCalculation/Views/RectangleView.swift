@@ -42,25 +42,36 @@ struct RectangleView: View {
                    in: 0...100,
                    label: { Text("Length") },
                    minimumValueLabel: { Text("0") },
-                   maximumValueLabel: { Text("100") }
+                   maximumValueLabel: { Text("100") } )
             // Use string interpolation \() to display length
             Text("\(length)")
             
             Text("Width")
                 .font(.title2)
                 .fontWeight(.bold)
+            Slider(value: Binding.constant(length),
+            Slider(value: $length
+                   in: 0...100,
+                   label: { Text("Length") },
+                   minimumValueLabel: { Text("0") },
+                   maximumValueLabel: { Text("100") } ) )
             // Use string interpolation \() to display length
             Text("\(width)")
             
             Text("Area")
                 .font(.title2)
                 .fontWeight(.bold)
+            Slider(value: Binding.constant(length),
+                   in: 0...100,
+                   label: { Text("Length") },
+                   minimumValueLabel: { Text("0") },
+                   maximumValueLabel: { Text("100") } )
             // Use string interpolation \() to display length
             Text("\(area)")
             
-            
-            Spacer()
+
         }
+
     }
 }
 
