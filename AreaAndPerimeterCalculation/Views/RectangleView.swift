@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct RectangleView: View {
+    
+    // MARK: Stored properties
+    
+    // MARK: Computed properties
+    
+    // Shows our user interface
+    
     var body: some View {
         
+        VStack {
+            Image("Rectangle")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 250)
+            
+            Spacer()
+        }
     }
 }
 
