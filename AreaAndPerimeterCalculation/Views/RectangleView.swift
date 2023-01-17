@@ -10,8 +10,11 @@ import SwiftUI
 struct RectangleView: View {
     
     // MARK: Stored properties
-    let length: Double = 7.0
-    let width: Double = 5
+    // @State is a property wrapper
+    // Telling SwiftUI to "watch" these properties for changes
+    // Update the user interface when they do change
+    @State var length: Double = 7.0
+    @State var width: Double = 5
     
     // MARK: Computed properties
     var area: Double {
@@ -35,6 +38,11 @@ struct RectangleView: View {
             Text("Length")
                 .font(.title2)
                 .fontWeight(.bold)
+            Slider(value: Binding.constant(length),
+                   in: 0...100,
+                   label: { Text("Length") },
+                   minimumValueLabel: { Text("0") },
+                   maximumValueLabel: { Text("100") }
             // Use string interpolation \() to display length
             Text("\(length)")
             
@@ -49,6 +57,8 @@ struct RectangleView: View {
                 .fontWeight(.bold)
             // Use string interpolation \() to display length
             Text("\(area)")
+            
+            
             Spacer()
         }
     }
