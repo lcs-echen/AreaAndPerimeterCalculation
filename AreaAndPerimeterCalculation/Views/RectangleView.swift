@@ -21,6 +21,10 @@ struct RectangleView: View {
         return length * width
     }
     
+    var perimeter:Double {
+        return ( length + width ) * 2
+    }
+    
 
     // Shows our user interface
     
@@ -35,17 +39,18 @@ struct RectangleView: View {
                 
                 Spacer()
             }
-            Text("Length")
-                .font(.title2)
-                .fontWeight(.bold)
-            Slider(value: $length,
-                   in: 0...100,
-                   label: { Text("Length") },
-                   minimumValueLabel: { Text("0") },
-                   maximumValueLabel: { Text("100") } )
-            // Use string interpolation \() to display length
-            Text("\(length)")
-            
+            Group {
+                Text("Length")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                Slider(value: $length,
+                       in: 0...100,
+                       label: { Text("Length") },
+                       minimumValueLabel: { Text("0") },
+                       maximumValueLabel: { Text("100") } )
+                // Use string interpolation \() to display length
+                Text("\(length)")
+            }
             Text("Width")
                 .font(.title2)
                 .fontWeight(.bold)
@@ -58,6 +63,7 @@ struct RectangleView: View {
             // Use string interpolation \() to display length
             Text("\(width)")
             
+            
             Text("Area")
                 .font(.title2)
                 .fontWeight(.bold)
@@ -65,7 +71,14 @@ struct RectangleView: View {
             // Use string interpolation \() to display length
             Text("\(area)")
             
+            Text("Perimeter")
+                .font(.title2)
+                .fontWeight(.bold)
+           
+            // Use string interpolation \() to display length
+            Text("\(perimeter)")
 
+            Spacer()
         }
 
     }

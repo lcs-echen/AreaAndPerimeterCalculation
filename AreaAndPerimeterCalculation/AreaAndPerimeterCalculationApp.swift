@@ -11,7 +11,7 @@ import SwiftUI
 struct AreaAndPerimeterCalculationApp: App {
     var body: some Scene {
         WindowGroup {
-            RectangleView()
+            ListView()
         }
     }
 }
