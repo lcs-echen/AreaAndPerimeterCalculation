@@ -30,15 +30,14 @@ struct RectangleView: View {
     
     var body: some View {
         
-        VStack{
-            HStack {
+        VStack(spacing: 15) {
+
                 Image("Rectangle")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 250)
                 
-                Spacer()
-            }
+
             Group {
                 Text("Length")
                     .font(.title2)
@@ -49,7 +48,7 @@ struct RectangleView: View {
                        minimumValueLabel: { Text("0") },
                        maximumValueLabel: { Text("100") } )
                 // Use string interpolation \() to display length
-                Text("\(length)")
+                Text("\(length.formatted(.number.precision(.fractionLength(2))))")
             }
             Text("Width")
                 .font(.title2)
@@ -61,7 +60,7 @@ struct RectangleView: View {
                    minimumValueLabel: { Text("0") },
                    maximumValueLabel: { Text("100") } )
             // Use string interpolation \() to display length
-            Text("\(width)")
+            Text("\(width.formatted(.number.precision(.fractionLength(2))))")
             
             
             Text("Area")
@@ -69,17 +68,18 @@ struct RectangleView: View {
                 .fontWeight(.bold)
            
             // Use string interpolation \() to display length
-            Text("\(area)")
+            Text("\(area.formatted(.number.precision(.fractionLength(2))))")
             
             Text("Perimeter")
                 .font(.title2)
                 .fontWeight(.bold)
            
             // Use string interpolation \() to display length
-            Text("\(perimeter)")
+            Text("\(perimeter.formatted(.number.precision(.fractionLength(2))))")
 
             Spacer()
         }
+        .padding(.horizontal, 20)
 
     }
 }
