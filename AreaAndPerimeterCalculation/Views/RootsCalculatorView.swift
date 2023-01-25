@@ -103,7 +103,7 @@ struct RootsCalculatorView: View {
             List(priorResult.reversed()) { currentResult in
                 HStack {
                     Spacer()
-                    ResultView(somePriorResult: currentResult)
+                    RootsResultView(somePriorResult: currentResult)
                     Spacer()
                 }
             }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ResultView: View {
+struct RootsResultView: View {
     let somePriorResult: Result
     var body: some View {
         
@@ -38,8 +38,8 @@ struct ResultView: View {
     }
 }
 
-struct ResultView_Previews: PreviewProvider {
+struct RootsResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultView(somePriorResult: resultForPreviews)
+        RootsResultView(somePriorResult: resultForPreviews)
     }
 }
