@@ -14,6 +14,8 @@
 		CA8D779E2980454A00C56ED3 /* RootsResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8D779D2980454A00C56ED3 /* RootsResultView.swift */; };
 		CA8D77A229819C0400C56ED3 /* ModelsTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8D77A129819C0400C56ED3 /* ModelsTP.swift */; };
 		CA8D77A42981D3EC00C56ED3 /* TPResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8D77A32981D3EC00C56ED3 /* TPResultView.swift */; };
+		CA8D77A62981ED1500C56ED3 /* TriangularPrismInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8D77A52981ED1500C56ED3 /* TriangularPrismInformationView.swift */; };
+		CA8D77C82982CFE200C56ED3 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8D77C72982CFE200C56ED3 /* NumberView.swift */; };
 		CAF39289297705A40004940F /* AreaAndPerimeterCalculationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF39288297705A40004940F /* AreaAndPerimeterCalculationApp.swift */; };
 		CAF3928D297705A60004940F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF3928C297705A60004940F /* Assets.xcassets */; };
 		CAF39290297705A60004940F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF3928F297705A60004940F /* Preview Assets.xcassets */; };
@@ -28,6 +30,8 @@
 		CA8D779D2980454A00C56ED3 /* RootsResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootsResultView.swift; sourceTree = "<group>"; };
 		CA8D77A129819C0400C56ED3 /* ModelsTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsTP.swift; sourceTree = "<group>"; };
 		CA8D77A32981D3EC00C56ED3 /* TPResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPResultView.swift; sourceTree = "<group>"; };
+		CA8D77A52981ED1500C56ED3 /* TriangularPrismInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangularPrismInformationView.swift; sourceTree = "<group>"; };
+		CA8D77C72982CFE200C56ED3 /* NumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
 		CAF39285297705A40004940F /* AreaAndPerimeterCalculation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AreaAndPerimeterCalculation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF39288297705A40004940F /* AreaAndPerimeterCalculationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaAndPerimeterCalculationApp.swift; sourceTree = "<group>"; };
 		CAF3928C297705A60004940F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +50,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA8D77C9298321C200C56ED3 /* TriangularPrism  */ = {
+			isa = PBXGroup;
+			children = (
+				CA8D77A129819C0400C56ED3 /* ModelsTP.swift */,
+				CA8D77A32981D3EC00C56ED3 /* TPResultView.swift */,
+				CA8D77C72982CFE200C56ED3 /* NumberView.swift */,
+				CA8D77A52981ED1500C56ED3 /* TriangularPrismInformationView.swift */,
+				CA6D7E022979D0990010CC58 /* TriangularPrismView.swift */,
+			);
+			path = "TriangularPrism ";
+			sourceTree = "<group>";
+		};
+		CA8D77CA298321FA00C56ED3 /* RootsCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				CA8D779929803A6A00C56ED3 /* RootsCalculatorView.swift */,
+				CA8D779D2980454A00C56ED3 /* RootsResultView.swift */,
+				CA8D779B298044A400C56ED3 /* ModelRoots.swift */,
+			);
+			path = RootsCalculator;
+			sourceTree = "<group>";
+		};
 		CAF3927C297705A30004940F = {
 			isa = PBXGroup;
 			children = (
@@ -86,12 +112,8 @@
 			children = (
 				CAF392972977064B0004940F /* RectangleView.swift */,
 				CA6D7E002979CF300010CC58 /* ListView.swift */,
-				CA6D7E022979D0990010CC58 /* TriangularPrismView.swift */,
-				CA8D779929803A6A00C56ED3 /* RootsCalculatorView.swift */,
-				CA8D77A129819C0400C56ED3 /* ModelsTP.swift */,
-				CA8D77A32981D3EC00C56ED3 /* TPResultView.swift */,
-				CA8D779B298044A400C56ED3 /* ModelRoots.swift */,
-				CA8D779D2980454A00C56ED3 /* RootsResultView.swift */,
+				CA8D77C9298321C200C56ED3 /* TriangularPrism  */,
+				CA8D77CA298321FA00C56ED3 /* RootsCalculator */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,12 +190,14 @@
 			files = (
 				CA8D77A229819C0400C56ED3 /* ModelsTP.swift in Sources */,
 				CAF392982977064B0004940F /* RectangleView.swift in Sources */,
+				CA8D77A62981ED1500C56ED3 /* TriangularPrismInformationView.swift in Sources */,
 				CA8D779C298044A400C56ED3 /* ModelRoots.swift in Sources */,
 				CAF39289297705A40004940F /* AreaAndPerimeterCalculationApp.swift in Sources */,
 				CA8D779A29803A6A00C56ED3 /* RootsCalculatorView.swift in Sources */,
 				CA6D7E012979CF300010CC58 /* ListView.swift in Sources */,
 				CA8D779E2980454A00C56ED3 /* RootsResultView.swift in Sources */,
 				CA6D7E032979D0990010CC58 /* TriangularPrismView.swift in Sources */,
+				CA8D77C82982CFE200C56ED3 /* NumberView.swift in Sources */,
 				CA8D77A42981D3EC00C56ED3 /* TPResultView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
