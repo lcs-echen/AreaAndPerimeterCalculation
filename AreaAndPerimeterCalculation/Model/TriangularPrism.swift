@@ -1,5 +1,5 @@
 //
-//  ModelsTP.swift
+//  TriangularPrism.swift
 //  AreaAndPerimeterCalculation
 //
 //  Created by Evelyn Chen on 2023-01-25.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct modelsTP: Identifiable {
+struct TriangularPrism: Identifiable {
     let id = UUID()
     let baseline : Double
     let trianglelength: Double
@@ -20,4 +20,4 @@ struct modelsTP: Identifiable {
     let volume: Double
 }
 
-let modelForPreview = modelsTP(baseline: 5, trianglelength: 5, height: 5, oneSideOfTriangle: 5, anotherSideOfTriangle: 5, baseArea: 5, rectangleArea: 5, totalArea: 5, volume: 5)
+let modelForPreview = TriangularPrism(baseline: 5, trianglelength: 5, height: 5, oneSideOfTriangle: 5, anotherSideOfTriangle: 5, baseArea: 5, rectangleArea: 5, totalArea: 5, volume: 5)

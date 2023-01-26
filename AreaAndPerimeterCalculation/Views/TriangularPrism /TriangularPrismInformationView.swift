@@ -14,7 +14,7 @@ struct TriangularPrismInformationView: View {
     @State var height: Double = 5
     @State var oneSideOfTriangle: Double = 5
     @State var anotherSideOfTriangle: Double = 5
-    @State var tPriorResult: [modelsTP] = []
+    @State var tPriorResult: [TriangularPrism] = []
     var baseArea: Double {
         return baseline * trianglelength / 2
     }

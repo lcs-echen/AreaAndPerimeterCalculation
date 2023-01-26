@@ -9,13 +9,14 @@ import SwiftUI
 
 struct TriangularPrismView: View {
     @State var baseline: Double = 5
-    @State var trianglelength: Double = 5
+    @State var triangleLength: Double = 5
     @State var height: Double = 5
     @State var oneSideOfTriangle: Double = 5
     @State var anotherSideOfTriangle: Double = 5
-    @State var tPriorResult: [modelsTP] = []
+    @State var historyResults: [TriangularPrism] = []
+    
     var baseArea: Double {
-        return baseline * trianglelength / 2
+        return baseline * triangleLength / 2
     }
     var rectangleArea: Double {
         return oneSideOfTriangle * height + anotherSideOfTriangle * height + baseline * height
@@ -42,9 +43,12 @@ struct TriangularPrismView: View {
                     
                     Group {
                         Button(action: {
-                            let latestResult = modelsTP(baseline: baseline, trianglelength: trianglelength, height: height, oneSideOfTriangle: oneSideOfTriangle, anotherSideOfTriangle: anotherSideOfTriangle, baseArea: baseArea, rectangleArea: rectangleArea, totalArea: totalArea, volume: volume)
-                            tPriorResult.append(latestResult)
-                        }, label: {Text("Save Result")})
+                            let latestPrism = TriangularPrism(baseline: baseline, trianglelength: triangleLength, height: height, oneSideOfTriangle: oneSideOfTriangle, anotherSideOfTriangle: anotherSideOfTriangle, baseArea: baseArea, rectangleArea: rectangleArea, totalArea: totalArea, volume: volume)
+                            historyResults.append(latestPrism)
+                        }, label: {
+                            Text("Save Result")
+                            
+                        })
                         .buttonStyle(.bordered)
                         .padding()
                         
@@ -55,10 +59,10 @@ struct TriangularPrismView: View {
                             Spacer()
                         }
                         
-                        List(tPriorResult.reversed()) { currentResult in
+                        List(historyResults.reversed()) { currentResult in
                             HStack {
                                 Spacer()
-                                TPResultView(tpPriorResult: currentResult)
+                                TriangularPrismResultView(result: currentResult)
                                 Spacer()
                             }
                             
