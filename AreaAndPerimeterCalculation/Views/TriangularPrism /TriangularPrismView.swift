@@ -59,11 +59,9 @@ struct TriangularPrismView: View {
                             Spacer()
                         }
                         
-                        List(historyResults.reversed()) { currentResult in
+                        ForEach(historyResults.reversed()) { currentResult in
                             HStack {
-                                Spacer()
                                 TriangularPrismResultView(result: currentResult)
-                                Spacer()
                             }
                             
                         }
