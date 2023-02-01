@@ -8,30 +8,64 @@
 import SwiftUI
 
 struct RootsCalculatorView: View {
-    // Stored Properties
-    @State var a : Double = 5
-    @State var b : Double = 5
-    @State var c : Double = 5
+    // MARK: Stored Properties
+    @State var a : String = ""
+    @State var b : String = ""
+    @State var c : String = ""
     @State var priorResult: [Result] = []
-    // Computed Properties
-    var result : String {
-        let discriminant = b * b - 4 * a * c
+    // MARK: Computed Properties
+    var discriminant: Double? {
         
-        if discriminant < 0 {
+        // Try to convert provided a to a Double
+        guard let a1 = Double(a) else {
+            // Can't be done..
+            // We can't calculate area...
+            // Return a nil for the area value instead...
+            return nil
+        }
+        
+        // Try to convert provided b to a Double
+        guard let b1 = Double(b) else {
+            // Can't be done..
+            // We can't calculate area...
+            // Return a nil for the area value instead...
+            return nil
+            
+        // Try to convert provided width to a Double
+            guard let c1 = Double(c) else {
+                // Can't be done..
+                // We can't calculate area...
+                // Return a nil for the area value instead...
+                return nil
+        }
+
+        // We have a valid length and width values, so return the area
+        return b1 * b1 - 4 * a1 * c1
+    }
+        
+        var discriminantResult: Double {
+            // Do we have a valid discriminant?
+            guard let discriminantResult = discriminant else {
+                return "Cannot be found. Please provide numeric input."
+            }
+            // We have a valid discriminant; report it
+            return discriminantResult
+        }
+
+    var result : String {
+        
+        if discriminantResult < 0 {
             return "No real roots"
         } else {
-            let x1 = ( b * -1 - discriminant.squareRoot()) / (2 * a)
-            let x2 = ( b * -1 + discriminant.squareRoot()) / (2 * a)
+            let x1 = ( b1 * -1 - discriminantResult.squareRoot()) / (2 * a1)
+            let x2 = ( b1 * -1 + discriminantResult.squareRoot()) / (2 * a1)
             
             return "x ≈ \(x1.formatted(.number.precision(.fractionLength(2)))) and x ≈ \(x2.formatted(.number.precision(.fractionLength(2))))"
         }
     }
     
     var body: some View {
-        VStack (alignment: .leading){
-            Text("Find the Roots")
-                .font(.largeTitle)
-                .fontWeight(.semibold)
+  
             VStack (alignment: .center) {
                 Image("QF")
                     .resizable()
@@ -44,38 +78,38 @@ struct RootsCalculatorView: View {
                 
                 HStack {
                     VStack{
-                        Text("a: \(a.formatted(.number.precision(.fractionLength(1))))")
+                        Text("a: ")
                             .font(Font.custom("Times New Roman",
                                               size: 24.0,
                                               relativeTo: .body))
-                        
-                        Slider(value: $a,
-                               in: -20...20,
-                               label: { Text("Length") }
-                        )
+                        TextField("Enter 'a'...", text: $a)
+//                        Slider(value: $a,
+//                               in: -20...20,
+//                               label: { Text("Length") }
+//                        )
                     }
                     VStack{
-                        Text("b: \(b.formatted(.number.precision(.fractionLength(1))))")
+                        Text("b: ")
                             .font(Font.custom("Times New Roman",
                                               size: 24.0,
                                               relativeTo: .body))
-                        
-                        Slider(value: $b,
-                               in: -20...20,
-                               label: { Text("Length") } )
+                        TextField("Enter 'b'...", text: $b)
+//                        Slider(value: $b,
+//                               in: -20...20,
+//                               label: { Text("Length") } )
                         
                     }
                     
                     VStack{
-                        Text("c: \(c.formatted(.number.precision(.fractionLength(1))))")
+                        Text("c: ")
                             .font(Font.custom("Times New Roman",
                                               size: 24.0,
                                               relativeTo: .body))
-                        
-                        Slider(value: $c,
-                               in: -20...20,
-                               label: { Text("Length") } )
-                    }
+                        TextField("Enter 'c'...", text: $c)
+//                        Slider(value: $c,
+//                               in: -20...20,
+//                               label: { Text("Length") } )
+//                    }
                 }
                 
                 Text(result)
@@ -84,15 +118,16 @@ struct RootsCalculatorView: View {
                                       relativeTo: .body))
                 
                 Button(action: {
-                    let latestResult = Result(a: a,
-                                              b: b,
-                                              c: c,
+                    let latestResult = Result(aStored: a1,
+                                              bStored: b1,
+                                              cStored: c1,
                                               roots: result)
                     priorResult.append(latestResult)
                 }, label: {Text("Save Result")})
                     .buttonStyle(.bordered)
                     .padding()
             }
+                
             HStack {
                 Text("History")
                     .font(.title)
@@ -110,8 +145,11 @@ struct RootsCalculatorView: View {
             Spacer()
         }
         .padding(25)
+        .navigationTitle("Find the Roots")
+
     }
-}
+    
+    
 
 struct RootsCalculatorView_Previews: PreviewProvider {
     static var previews: some View {

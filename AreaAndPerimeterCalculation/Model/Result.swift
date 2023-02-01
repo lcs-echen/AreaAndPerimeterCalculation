@@ -9,9 +9,9 @@ import Foundation
 
 struct Result : Identifiable {
     let id = UUID()
-    let a : Double
-    let b : Double
-    let c : Double
+    let aStored : Double
+    let bStored : Double
+    let cStored : Double
     let roots : String
 }
 
