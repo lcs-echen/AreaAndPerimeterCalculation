@@ -9,10 +9,10 @@ import Foundation
 
 struct Result : Identifiable {
     let id = UUID()
-    let aStored : Double
-    let bStored : Double
-    let cStored : Double
+    let aStored : String
+    let bStored : String
+    let cStored : String
     let roots : String
 }
 
-let resultForPreviews = Result(a: 1, b: -6, c: 8, roots: "x ≈ 2.00 and x ≈ 4.00")
+let resultForPreviews = Result(aStored: "1", bStored: "-6", cStored: "8", roots: "x ≈ 2.00 and x ≈ 4.00")

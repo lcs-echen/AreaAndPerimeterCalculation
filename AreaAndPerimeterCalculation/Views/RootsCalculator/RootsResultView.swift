@@ -10,19 +10,20 @@ import SwiftUI
 struct RootsResultView: View {
     let somePriorResult: Result
     var body: some View {
-        
-        
             VStack(spacing: 10) {
                 HStack {
-                    Text("a ≈ \(somePriorResult.a.formatted(.number.precision(.fractionLength(1))))")
+                    Text("a ≈")
+                    Text(somePriorResult.aStored)
                         .font(Font.custom("Times New Roman",
                                           size: 20.0,
                                           relativeTo: .body))
-                    Text("b ≈ \(somePriorResult.b.formatted(.number.precision(.fractionLength(1))))")
+                    Text("b ≈")
+                      Text(somePriorResult.bStored)
                         .font(Font.custom("Times New Roman",
                                           size: 20.0,
                                           relativeTo: .body))
-                    Text("c ≈ \(somePriorResult.c.formatted(.number.precision(.fractionLength(1))))")
+                    Text("c ≈")
+                    Text(somePriorResult.cStored)
                         .font(Font.custom("Times New Roman",
                                           size: 20.0,
                                           relativeTo: .body))
